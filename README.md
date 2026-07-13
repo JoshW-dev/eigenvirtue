@@ -176,7 +176,13 @@ The construction the original meme implies (stack embeddings of virtue sentences
 - **Plato**, *Meno*; **Aristotle**, *Nicomachean Ethics*, Books II to IV. The problem statement and the dataset schema, respectively.
 - **Provenance of the question:** [eigenslur.org](https://eigenslur.org/) (the thought experiment, never executed) and [@zach.zeta.s's video](https://www.tiktok.com/@zach.zeta.s/video/7640238795803151646) proposing the flourishing-direction inversion this repo implements.
 
-## 8. Reproducing
+## 8. The other pole: the eigenslur
+
+The idea that started all of this pointed the other way. [eigenslur.org](https://eigenslur.org/) proposed "the principal component of offense, the eigenvector of linguistic cruelty" as a thought experiment and never ran it, and the video that inspired this repo flipped the question toward flourishing. We went back and ran the original direction too, responsibly: a denigration axis fit from 18 respect/contempt pairs containing no slurs and no group-targeted language, since the interesting claim was always geometric rather than lexical.
+
+The short version of the findings: the eigenslur exists, contempt is even more one-directional than virtue (23.3% of contrast energy in PC1 versus 19.6%, same model), and the axis sits at cosine -0.76 to the eigenvirtue. Linguistic cruelty turns out to be mostly the virtue axis traversed backwards, with a contempt-specific remainder. The full write-up, including why we still refused to hunt for the maximally offensive token, is in [docs/eigenslur.md](docs/eigenslur.md).
+
+## 9. Reproducing
 
 ```bash
 git clone https://github.com/JoshW-dev/eigenvirtue && cd eigenvirtue
@@ -186,6 +192,7 @@ OPENAI_API_KEY=... .venv/bin/python examples/run_eigenvirtue.py openai:text-embe
 .venv/bin/python examples/make_figures.py               # regenerate the static figures
 .venv/bin/python examples/make_rotation.py              # regenerate the rotating 3D GIF
 .venv/bin/python examples/make_hero.py                  # regenerate the hero animation
+.venv/bin/python examples/run_eigenslur.py              # the other pole (docs/eigenslur.md)
 ```
 
 `run_eigenvirtue.py` prints every number in §4 and writes plots plus `results/summary.json`. Randomness is seeded. Local-model results reproduce exactly.

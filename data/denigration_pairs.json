@@ -1,0 +1,88 @@
+{
+  "concept": "denigration",
+  "description": "Contrast pairs for the denigration axis, the responsible version of the eigenslur experiment. The concept side (first sentence of each pair) is contemptuous speech; the second is a respectful phrasing of the same situation. The dataset contains no slurs and no group-targeted language by design: the point is the geometry of contempt, not a catalog of it. Field names follow the loader's schema, so 'virtue' holds the concept side (contempt) and 'vice' holds its opposite (respect).",
+  "groups": [
+    {
+      "virtue": "insult",
+      "vice": "compliment",
+      "relation": "opposite",
+      "tradition": "speech",
+      "pairs": [
+        ["You did lazy, worthless work on this.", "You did careful, thorough work on this."],
+        ["That was the most incompetent presentation I have ever sat through.", "That was the most impressive presentation I have seen all year."],
+        ["Only a fool would write a report this bad.", "Only real skill produces a report this good."]
+      ]
+    },
+    {
+      "virtue": "contempt",
+      "vice": "courtesy",
+      "relation": "opposite",
+      "tradition": "speech",
+      "pairs": [
+        ["He snapped his fingers at the waiter and called him useless.", "He thanked the waiter and asked his name."],
+        ["She waved the cleaner away like a bad smell.", "She greeted the cleaner by name every morning."]
+      ]
+    },
+    {
+      "virtue": "belittling",
+      "vice": "encouragement",
+      "relation": "opposite",
+      "tradition": "speech",
+      "pairs": [
+        ["No amount of practice will fix someone like you.", "With practice you will get genuinely good at this."],
+        ["Don't bother trying, this is clearly beyond you.", "Keep trying, this is clearly within your reach."],
+        ["You were never smart enough for this job.", "You have always been sharp enough for this job."]
+      ]
+    },
+    {
+      "virtue": "dismissal",
+      "vice": "consideration",
+      "relation": "opposite",
+      "tradition": "speech",
+      "pairs": [
+        ["Her proposal is garbage and so is her judgment.", "Her proposal is strong and so is her judgment."],
+        ["Nobody cares what you think about this.", "Everyone wants to hear what you think about this."]
+      ]
+    },
+    {
+      "virtue": "mockery",
+      "vice": "praise",
+      "relation": "opposite",
+      "tradition": "speech",
+      "pairs": [
+        ["Everyone could see what a joke his effort was.", "Everyone could see how hard he had tried."],
+        ["The whole room laughed at her clumsy attempt.", "The whole room applauded her brave attempt."]
+      ]
+    },
+    {
+      "virtue": "dehumanization",
+      "vice": "recognition",
+      "relation": "opposite",
+      "tradition": "speech",
+      "pairs": [
+        ["The commuters were cattle shuffling through the gates.", "The commuters were tired people heading home."],
+        ["He talked about his tenants as if they were pests to manage.", "He talked about his tenants as neighbors he was responsible to."]
+      ]
+    },
+    {
+      "virtue": "humiliation",
+      "vice": "dignity",
+      "relation": "opposite",
+      "tradition": "speech",
+      "pairs": [
+        ["She humiliated the intern in front of the whole office.", "She corrected the intern privately and kindly."],
+        ["He read the failing student's grade aloud to the class.", "He discussed the failing student's grade with him alone."]
+      ]
+    },
+    {
+      "virtue": "scorn",
+      "vice": "admiration",
+      "relation": "opposite",
+      "tradition": "speech",
+      "pairs": [
+        ["I despise everything about the way you handled that.", "I admire everything about the way you handled that."],
+        ["People like you make everything worse.", "People like you make everything better."]
+      ]
+    }
+  ]
+}
