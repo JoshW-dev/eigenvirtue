@@ -1,0 +1,23 @@
+[project]
+name = "eigenvirtue"
+version = "0.1.0"
+description = "Find the dominant direction of any abstract concept in a language model's embedding space — virtue as the flagship example."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+dependencies = [
+    "numpy",
+    "scipy",
+    "sentence-transformers",
+    "matplotlib",
+]
+
+[project.optional-dependencies]
+openai = ["openai"]
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["eigenvirtue"]

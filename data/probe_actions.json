@@ -1,0 +1,41 @@
+{
+  "description": "Everyday actions to project onto the fitted axes. Categories: virtuous, vicious, neutral, plus the four dissociation cells that separate virtue from sentiment (virtuous_unpleasant, vicious_pleasant, pleasant_nonmoral, unpleasant_nonmoral). None of these sentences appear in the training pairs.",
+  "probes": [
+    {"text": "returned a lost wallet with all the cash still inside", "category": "virtuous"},
+    {"text": "donated blood on her lunch break", "category": "virtuous"},
+    {"text": "covered a sick coworker's shift without being asked", "category": "virtuous"},
+    {"text": "admitted his own mistake before anyone noticed it", "category": "virtuous"},
+    {"text": "defended a stranger being harassed on the train", "category": "virtuous"},
+    {"text": "kept a promise even after it became inconvenient", "category": "virtuous"},
+
+    {"text": "cut in line and pretended not to notice", "category": "vicious"},
+    {"text": "took credit for a colleague's work", "category": "vicious"},
+    {"text": "padded his expense report with fake receipts", "category": "vicious"},
+    {"text": "mocked a beginner struggling at the gym", "category": "vicious"},
+    {"text": "read her partner's private messages in secret", "category": "vicious"},
+    {"text": "let the blame fall on an innocent teammate", "category": "vicious"},
+
+    {"text": "bought a carton of milk on the way home", "category": "neutral"},
+    {"text": "parked the car in the garage", "category": "neutral"},
+    {"text": "watched television after dinner", "category": "neutral"},
+    {"text": "took the 8:15 train to work", "category": "neutral"},
+    {"text": "reorganized the spreadsheet by date", "category": "neutral"},
+
+    {"text": "won a small prize in the lottery", "category": "pleasant_nonmoral"},
+    {"text": "got upgraded to first class for free", "category": "pleasant_nonmoral"},
+    {"text": "found twenty dollars in an old jacket", "category": "pleasant_nonmoral"},
+
+    {"text": "got caught in the rain without an umbrella", "category": "unpleasant_nonmoral"},
+    {"text": "lost his phone on the bus", "category": "unpleasant_nonmoral"},
+    {"text": "came down with a cold right before the holiday", "category": "unpleasant_nonmoral"},
+
+    {"text": "told her best friend a hard truth he didn't want to hear", "category": "virtuous_unpleasant"},
+    {"text": "reported her own team's safety violation, knowing it would cost them the contract", "category": "virtuous_unpleasant"},
+    {"text": "spent the night at the hospital comforting a dying neighbor", "category": "virtuous_unpleasant"},
+    {"text": "apologized publicly for a mistake and accepted the embarrassment", "category": "virtuous_unpleasant"},
+
+    {"text": "charmed the whole party with flattery he didn't mean", "category": "vicious_pleasant"},
+    {"text": "enjoyed a luxurious vacation paid for with embezzled money", "category": "vicious_pleasant"},
+    {"text": "won the tournament by quietly cheating and celebrated all night", "category": "vicious_pleasant"}
+  ]
+}

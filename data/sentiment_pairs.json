@@ -1,0 +1,28 @@
+{
+  "concept": "sentiment",
+  "description": "Control axis: positive vs negative sentiment with no moral content. Used to show the virtue axis is not simply the pleasantness axis.",
+  "groups": [
+    {
+      "virtue": "pleasant",
+      "vice": "unpleasant",
+      "relation": "opposite",
+      "tradition": "control",
+      "pairs": [
+        ["The weather was glorious all weekend.", "The weather was dreadful all weekend."],
+        ["The concert sounded amazing.", "The concert sounded terrible."],
+        ["My flight landed early and smoothly.", "My flight was delayed for six hours."],
+        ["The soup was delicious.", "The soup was inedible."],
+        ["The hike ended with a stunning view.", "The hike ended in cold drizzle and fog."],
+        ["Her garden bloomed beautifully this spring.", "Her garden withered completely this spring."],
+        ["The new phone works flawlessly.", "The new phone keeps crashing."],
+        ["I slept wonderfully last night.", "I barely slept at all last night."],
+        ["The team won the championship.", "The team lost every game this season."],
+        ["Traffic was light and I got home in no time.", "Traffic was gridlocked for hours."],
+        ["The movie was a delight from start to finish.", "The movie was a tedious mess."],
+        ["The beach was warm and calm.", "The beach was freezing and windswept."],
+        ["The renovation finished ahead of schedule.", "The renovation dragged on for a miserable year."],
+        ["The coffee this morning was perfect.", "The coffee this morning was burnt and bitter."]
+      ]
+    }
+  ]
+}

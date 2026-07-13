@@ -1,0 +1,275 @@
+{
+  "concept": "virtue",
+  "description": "Contrast pairs for the virtue axis. Each pair holds structure and subject matter as constant as possible and flips only the moral content. Groups follow Aristotle's table of virtues and vices from the Nicomachean Ethics (Book II.7), where each virtue is the mean between a vice of deficiency and a vice of excess, plus a set of broader virtues drawn from other traditions.",
+  "groups": [
+    {
+      "virtue": "courage",
+      "vice": "cowardice",
+      "relation": "deficiency",
+      "tradition": "aristotle",
+      "pairs": [
+        ["She spoke up in the meeting even though her hands were shaking.", "She stayed silent in the meeting because she was afraid to speak."],
+        ["He ran toward the crash to help before the ambulance arrived.", "He hurried away from the crash so he wouldn't get involved."],
+        ["The soldier held the line as the enemy advanced.", "The soldier abandoned the line as the enemy advanced."],
+        ["Though terrified, she testified against the gang in open court.", "Terrified, she withdrew her testimony and let the gang walk free."]
+      ]
+    },
+    {
+      "virtue": "courage",
+      "vice": "recklessness",
+      "relation": "excess",
+      "tradition": "aristotle",
+      "pairs": [
+        ["Knowing the risk, she planned the dangerous climb carefully and then committed to it.", "Ignoring every warning, she attempted the dangerous climb on a whim."],
+        ["He confronted his boss after weighing what it might cost him.", "He mouthed off to his boss without a thought for the consequences."],
+        ["The firefighter entered the building once the crew confirmed someone was still inside.", "The firefighter charged into the empty building against orders, just for the thrill."]
+      ]
+    },
+    {
+      "virtue": "temperance",
+      "vice": "self-indulgence",
+      "relation": "excess",
+      "tradition": "aristotle",
+      "pairs": [
+        ["She enjoyed one glass of wine and called it a night.", "She kept pouring wine long after she'd had enough."],
+        ["He put half the bonus into savings and enjoyed the rest.", "He blew the entire bonus in one weekend of excess."],
+        ["She ate until satisfied and left the rest for tomorrow.", "She kept eating long past full, just because it was there."]
+      ]
+    },
+    {
+      "virtue": "temperance",
+      "vice": "insensibility",
+      "relation": "deficiency",
+      "tradition": "aristotle",
+      "pairs": [
+        ["He savored the feast gratefully and stopped when satisfied.", "He refused every dish at the feast, treating enjoyment itself as a weakness."],
+        ["She allowed herself a real vacation and came back rested.", "She denied herself any rest on principle and came back hollow."]
+      ]
+    },
+    {
+      "virtue": "generosity",
+      "vice": "stinginess",
+      "relation": "deficiency",
+      "tradition": "aristotle",
+      "pairs": [
+        ["She tipped the struggling waiter generously.", "She left the struggling waiter nothing at all."],
+        ["He lent his tools to the new neighbor without being asked twice.", "He hid his tools so the new neighbor couldn't borrow them."],
+        ["Though money was tight, she still gave something to the food drive.", "Though money was plentiful, she gave nothing to the food drive."]
+      ]
+    },
+    {
+      "virtue": "generosity",
+      "vice": "wastefulness",
+      "relation": "excess",
+      "tradition": "aristotle",
+      "pairs": [
+        ["She gave what she could afford to causes she had looked into.", "She threw money at anyone who asked while her own family went without."],
+        ["He funded the shelter steadily, year after year.", "He splashed one enormous donation for the cameras and never gave again."]
+      ]
+    },
+    {
+      "virtue": "magnificence",
+      "vice": "vulgarity",
+      "relation": "excess",
+      "tradition": "aristotle",
+      "pairs": [
+        ["The donor funded the new library wing quietly and tastefully.", "The donor plastered his name in gold letters across a hall nobody needed."],
+        ["She hosted a beautiful festival the whole town could enjoy.", "She staged a gaudy spectacle designed only to show off her wealth."]
+      ]
+    },
+    {
+      "virtue": "magnanimity",
+      "vice": "vanity",
+      "relation": "excess",
+      "tradition": "aristotle",
+      "pairs": [
+        ["She accepted the award with quiet dignity and credited her team.", "She accepted the award boasting that no one else had deserved it."],
+        ["He carried his success lightly and used it to open doors for others.", "He wore his success loudly and used it to belittle everyone else."]
+      ]
+    },
+    {
+      "virtue": "magnanimity",
+      "vice": "pusillanimity",
+      "relation": "deficiency",
+      "tradition": "aristotle",
+      "pairs": [
+        ["He knew his work was good and said so calmly when asked.", "He insisted his work was worthless even as everyone praised it."],
+        ["She put herself forward for the role she had earned.", "She talked herself out of the role she had plainly earned."]
+      ]
+    },
+    {
+      "virtue": "patience",
+      "vice": "irascibility",
+      "relation": "excess",
+      "tradition": "aristotle",
+      "pairs": [
+        ["When the waiter mixed up the order, she smiled and asked politely for a fix.", "When the waiter mixed up the order, she screamed for the manager."],
+        ["He took a breath and answered the insult calmly.", "He exploded at the slightest insult."],
+        ["She waited out the long delay reading her book.", "She berated the gate agent over the long delay."]
+      ]
+    },
+    {
+      "virtue": "truthfulness",
+      "vice": "boastfulness",
+      "relation": "excess",
+      "tradition": "aristotle",
+      "pairs": [
+        ["He described his role in the project exactly as it was.", "He inflated his role in the project far beyond the truth."],
+        ["Her résumé listed precisely what she had done.", "Her résumé claimed achievements that were never hers."]
+      ]
+    },
+    {
+      "virtue": "wittiness",
+      "vice": "buffoonery",
+      "relation": "excess",
+      "tradition": "aristotle",
+      "pairs": [
+        ["His jokes at dinner made everyone at the table feel included.", "His jokes at dinner humiliated whoever was easiest to mock."],
+        ["She teased her friends gently and they laughed with her.", "She ridiculed her friends harshly and they laughed to hide the sting."]
+      ]
+    },
+    {
+      "virtue": "friendliness",
+      "vice": "quarrelsomeness",
+      "relation": "deficiency",
+      "tradition": "aristotle",
+      "pairs": [
+        ["He greeted the new colleague warmly and showed her around.", "He picked a fight with the new colleague on her first day."],
+        ["She welcomed the criticism and talked it through over coffee.", "She turned the smallest criticism into a shouting match."]
+      ]
+    },
+    {
+      "virtue": "friendliness",
+      "vice": "obsequiousness",
+      "relation": "excess",
+      "tradition": "aristotle",
+      "pairs": [
+        ["She was kind to the director and honest about the script's flaws.", "She fawned over the director, agreeing with everything to stay in favor."],
+        ["He praised the plan's strengths and named its one real weakness.", "He praised every part of the plan he privately knew was failing."]
+      ]
+    },
+    {
+      "virtue": "righteous indignation",
+      "vice": "envy",
+      "relation": "deficiency",
+      "tradition": "aristotle",
+      "pairs": [
+        ["She was outraged that the prize went to a cheater.", "She was bitter that the prize went to someone who had earned it."],
+        ["He protested when the award was rigged.", "He seethed when the award was fair."]
+      ]
+    },
+    {
+      "virtue": "honesty",
+      "vice": "dishonesty",
+      "relation": "opposite",
+      "tradition": "broad",
+      "pairs": [
+        ["She admitted the mistake to her client and offered to fix it.", "She hid the mistake from her client and hoped no one would notice."],
+        ["He returned the extra change the cashier had given him.", "He pocketed the extra change and walked out quickly."],
+        ["She told her friend the truth even though it was awkward.", "She lied to her friend because the truth was awkward."]
+      ]
+    },
+    {
+      "virtue": "compassion",
+      "vice": "cruelty",
+      "relation": "opposite",
+      "tradition": "broad",
+      "pairs": [
+        ["He knelt to help the fallen stranger gather her groceries.", "He laughed at the fallen stranger and stepped over her groceries."],
+        ["She sat with the grieving widow all afternoon.", "She mocked the grieving widow behind her back."],
+        ["They slowed the hike so the injured climber could keep up.", "They left the injured climber behind to keep their pace."]
+      ]
+    },
+    {
+      "virtue": "justice",
+      "vice": "injustice",
+      "relation": "opposite",
+      "tradition": "broad",
+      "pairs": [
+        ["The judge weighed the evidence and ruled fairly, whoever it favored.", "The judge took the bribe and ruled for the highest bidder."],
+        ["The manager promoted whoever had earned it.", "The manager promoted only his friends."],
+        ["She split the inheritance exactly as the will required.", "She quietly rewrote the inheritance in her own favor."]
+      ]
+    },
+    {
+      "virtue": "humility",
+      "vice": "arrogance",
+      "relation": "opposite",
+      "tradition": "broad",
+      "pairs": [
+        ["She listened to the intern's idea and admitted it was better than hers.", "She dismissed the intern's idea because it wasn't hers."],
+        ["He asked for help the moment he was out of his depth.", "He refused all help, certain he could never be out of his depth."]
+      ]
+    },
+    {
+      "virtue": "gratitude",
+      "vice": "ingratitude",
+      "relation": "opposite",
+      "tradition": "broad",
+      "pairs": [
+        ["He wrote to thank the teacher who had changed his life.", "He never spared a thought for the teacher who had changed his life."],
+        ["She remembered everyone who had helped her get there.", "She spoke as if she had done it all entirely alone."]
+      ]
+    },
+    {
+      "virtue": "loyalty",
+      "vice": "betrayal",
+      "relation": "opposite",
+      "tradition": "broad",
+      "pairs": [
+        ["She defended her friend when the rumors started.", "She was the one spreading the rumors about her friend."],
+        ["He kept his partner's confidence under real pressure.", "He traded his partner's secrets for a small advantage."]
+      ]
+    },
+    {
+      "virtue": "diligence",
+      "vice": "sloth",
+      "relation": "opposite",
+      "tradition": "broad",
+      "pairs": [
+        ["He stayed late to finish the work he had promised.", "He slipped out early, leaving the promised work undone."],
+        ["She practiced every morning until the piece was right.", "She skipped practice all month and blamed the piano."]
+      ]
+    },
+    {
+      "virtue": "forgiveness",
+      "vice": "vengefulness",
+      "relation": "opposite",
+      "tradition": "broad",
+      "pairs": [
+        ["After the apology, she let the grudge go.", "After the apology, she plotted to get even anyway."],
+        ["He forgave the debt when he saw how his brother was struggling.", "He hounded his struggling brother for the debt out of spite."]
+      ]
+    },
+    {
+      "virtue": "integrity",
+      "vice": "corruption",
+      "relation": "opposite",
+      "tradition": "broad",
+      "pairs": [
+        ["The inspector refused the envelope of cash and filed an honest report.", "The inspector took the envelope of cash and buried the report."],
+        ["She resigned rather than sign numbers she knew were false.", "She signed the false numbers to keep her bonus."]
+      ]
+    },
+    {
+      "virtue": "kindness",
+      "vice": "meanness",
+      "relation": "opposite",
+      "tradition": "broad",
+      "pairs": [
+        ["He complimented the nervous student's effort.", "He ridiculed the nervous student's effort."],
+        ["She saved a seat for the kid who always sat alone.", "She moved her bag so the kid who always sat alone couldn't sit there."]
+      ]
+    },
+    {
+      "virtue": "prudence",
+      "vice": "foolishness",
+      "relation": "opposite",
+      "tradition": "broad",
+      "pairs": [
+        ["She read the contract carefully before signing.", "She signed the contract without reading a word."],
+        ["He checked the forecast and packed for the storm.", "He ignored the forecast and hiked into the storm."]
+      ]
+    }
+  ]
+}
