@@ -21,10 +21,10 @@ from eigenvirtue import LocalEmbedder, load_pairs
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "docs" / "figures" / "hero_rotation.gif"
 
-BG = "#0d1117"
-ALIGNED = "#6ca7e8"
-OTHER = "#3d434c"
-AXIS = "#e6edf3"
+BG = "#ffffff"
+ALIGNED = "#2c6fbb"
+OTHER = "#c3c8ce"
+AXIS = "#2b2f36"
 
 
 def main():
@@ -37,7 +37,7 @@ def main():
     e1 = vt[0] if vt[0] @ diffs.mean(axis=0) > 0 else -vt[0]
     coords = diffs @ np.stack([e1, vt[1], vt[2]]).T
 
-    fig = plt.figure(figsize=(8, 4.2), facecolor=BG)
+    fig = plt.figure(figsize=(6.2, 5.0), facecolor=BG)
     ax = fig.add_subplot(111, projection="3d")
     ax.set_facecolor(BG)
     ax.set_axis_off()
@@ -61,10 +61,10 @@ def main():
     fig.subplots_adjust(left=0, right=1, top=1.12, bottom=-0.12)
 
     def update(frame):
-        ax.view_init(elev=12, azim=-80 + frame * 4)
+        ax.view_init(elev=12, azim=-80 + frame * 2)
         return []
 
-    anim = FuncAnimation(fig, update, frames=90, blit=False)
+    anim = FuncAnimation(fig, update, frames=180, blit=False)
     anim.save(OUT, writer=PillowWriter(fps=18), dpi=100)
     print("wrote", OUT)
 

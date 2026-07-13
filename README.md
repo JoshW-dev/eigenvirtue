@@ -2,21 +2,17 @@
 
 **The dominant direction of virtue in a language model's embedding space, computed from Aristotle's table of virtues and vices.**
 
-<p align="center">
-  <img src="docs/figures/hero_rotation.gif" alt="61 virtue-vice difference vectors rotating in the top three of 768 embedding dimensions; the white arrow is the eigenvirtue" width="760">
-</p>
-
 <table>
 <tr>
-<td width="150" valign="middle">
-  <img src="docs/figures/plato_bust.jpg" alt="Bust of Plato" width="140">
+<td width="60%" valign="middle">
+  <img src="docs/figures/hero_rotation.gif" alt="61 virtue-vice difference vectors rotating in the top three of 768 embedding dimensions; the dark arrow is the eigenvirtue" width="100%">
 </td>
-<td valign="middle">
+<td width="40%" valign="middle" align="center">
+  <img src="docs/figures/plato_bust.jpg" alt="Bust of Plato" width="150">
   <blockquote>
     <p><em>"How fortunate I am, Meno! When I ask you for one virtue, you present me with a swarm of them, which are in your keeping."</em></p>
-    <p>Socrates, in Plato's <em>Meno</em>, ca. 385 BC</p>
+    <p>Socrates, in Plato's <em>Meno</em></p>
   </blockquote>
-  <p>Twenty-four centuries later, the swarm turns out to have a shared direction. This repository computes it.</p>
 </td>
 </tr>
 </table>
