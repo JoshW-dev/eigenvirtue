@@ -36,7 +36,9 @@ Everything runs on a laptop; the strongest model costs a few cents of API calls 
 
 Let $\varphi : \text{text} \to \mathbb{R}^d$ be an embedding model, with outputs normalized to unit length. Given $n$ contrast pairs $(x_i^{+}, x_i^{-})$ — a virtue sentence and its matched vice sentence — form difference vectors
 
-$$d_i = \varphi(x_i^{+}) - \varphi(x_i^{-}), \qquad D = \begin{bmatrix} d_1^\top \\ \vdots \\ d_n^\top \end{bmatrix} \in \mathbb{R}^{n \times d}.$$
+$$d_i = \varphi(x_i^{+}) - \varphi(x_i^{-}), \qquad i = 1, \dots, n,$$
+
+and stack them as the rows of a matrix $D \in \mathbb{R}^{n \times d}$.
 
 The **eigenvirtue** is the top right-singular vector of $D$:
 
@@ -52,7 +54,7 @@ The sign of $v_1$ is arbitrary under SVD; we orient it so $v_1 \cdot \bar d > 0$
 
 Virtue-talk is pleasant-talk, and any virtue axis fit from text inherits that correlation (we measure cosine 0.46–0.68 between the two axes, per model). To separate the concepts, we fit a **sentiment axis** $s$ by the identical procedure on 14 pleasant/unpleasant contrast pairs with no moral content ("The soup was delicious" / "The soup was inedible"), then remove it by orthogonal projection:
 
-$$\tilde v = \frac{v_1 - (v_1 \cdot s)\, s}{\lVert v_1 - (v_1 \cdot s)\, s \rVert}.$$
+$$\tilde v = \frac{v_1 - (v_1 \cdot s) s}{\lVert v_1 - (v_1 \cdot s) s \rVert}.$$
 
 $\tilde v$ is the part of the virtue direction that is *not* pleasantness. The interesting empirical fact is that this residual is large and does the moral work (§4.4).
 
