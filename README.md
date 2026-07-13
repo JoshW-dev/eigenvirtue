@@ -2,6 +2,25 @@
 
 **The dominant direction of virtue in a language model's embedding space, computed from Aristotle's table of virtues and vices.**
 
+<p align="center">
+  <img src="docs/figures/hero_rotation.gif" alt="61 virtue-vice difference vectors rotating in the top three of 768 embedding dimensions; the white arrow is the eigenvirtue" width="760">
+</p>
+
+<table>
+<tr>
+<td width="150" valign="middle">
+  <img src="docs/figures/plato_bust.jpg" alt="Bust of Plato" width="140">
+</td>
+<td valign="middle">
+  <blockquote>
+    <p><em>"How fortunate I am, Meno! When I ask you for one virtue, you present me with a swarm of them, which are in your keeping."</em></p>
+    <p>Socrates, in Plato's <em>Meno</em>, ca. 385 BC</p>
+  </blockquote>
+  <p>Twenty-four centuries later, the swarm turns out to have a shared direction. This repository computes it.</p>
+</td>
+</tr>
+</table>
+
 *A small, reproducible study: part linear algebra, part computer science, part philosophy. The code also works as a general tool for extracting the axis of any abstract concept.*
 
 ---
@@ -170,6 +189,7 @@ python3.11 -m venv .venv && .venv/bin/pip install -e .
 OPENAI_API_KEY=... .venv/bin/python examples/run_eigenvirtue.py openai:text-embedding-3-large
 .venv/bin/python examples/make_figures.py               # regenerate the static figures
 .venv/bin/python examples/make_rotation.py              # regenerate the rotating 3D GIF
+.venv/bin/python examples/make_hero.py                  # regenerate the hero animation
 ```
 
 `run_eigenvirtue.py` prints every number in §4 and writes plots plus `results/summary.json`. Randomness is seeded. Local-model results reproduce exactly.
@@ -188,6 +208,6 @@ axis.energy[:5]        # is your concept one direction or many?
 axis.score(["some new text"], embedder)   # project anything onto it
 ```
 
-## License
+## License and credits
 
-MIT.
+MIT. Plato bust photo: Marie-Lan Nguyen, Musei Capitolini (Silanion's Plato, Roman copy), [CC BY 2.5](https://creativecommons.org/licenses/by/2.5/), via Wikimedia Commons; converted to grayscale and cropped.
