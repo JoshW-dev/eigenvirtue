@@ -1,6 +1,6 @@
 # eigenvirtue
 
-**Can you compute a mathematical representation of virtue? This repository tries: one vector, extracted from a language model's embedding space.**
+**Can you compute a mathematical representation of virtue? Yes, here's how.**
 
 <table>
 <tr>
@@ -17,7 +17,7 @@
 </tr>
 </table>
 
-*This started with [a video](https://www.tiktok.com/@zach.zeta.s/video/7640238795803151646) asking whether you could compute the direction of human flourishing. This repo runs the math. The code works on any abstract concept, not just virtue.*
+*This project began with [a video](https://www.tiktok.com/@zach.zeta.s/video/7640238795803151646) that asked whether the direction of human flourishing could be computed, and grew into a small reproducible study: part linear algebra, part computer science, part philosophy. The same code extracts the dominant direction of any abstract concept you can write contrast pairs for.*
 
 ---
 
@@ -29,9 +29,9 @@ Can the concept of virtue be represented as a single vector? Embedding models ma
 
 ## 1. Introduction
 
-This project started as the inversion of a joke. The [eigenslur](https://eigenslur.org/) thought experiment claimed that since offensiveness is a direction in embedding space, some token must project furthest along it. The site never ran the computation. A [follow-up video](https://www.tiktok.com/@zach.zeta.s/video/7640238795803151646) by @zach.zeta.s asked the mirror-image question: could the same construction capture the direction of actions that aim at human flourishing, an eigenvalue of virtue? The video ended with an open invitation to attempt the idea rigorously. This repository is that attempt.
+This project started as the inversion of a joke. The [eigenslur](https://eigenslur.org/) thought experiment claimed that since offensiveness is a direction in embedding space, some token must project furthest along it. The site never ran the computation. A [follow-up video](https://www.tiktok.com/@zach.zeta.s/video/7640238795803151646) by @zach.zeta.s asked the mirror-image question: could the same construction capture the direction of actions that aim at human flourishing, an eigenvalue of virtue? The video ended with an open invitation to attempt the idea rigorously, which is what this repository does.
 
-People have argued about what virtue is for a long time without settling it. In the *Meno*, Socrates asks for a definition and Meno hands him a list of virtues, which gets him nowhere. We are not going to settle it either. We are asking a smaller question that actually has an answer: take a model that has read most of the internet, subtract "she stayed silent because she was afraid" from "she spoke up despite her fear" a few dozen times, and check whether the leftovers point the same way. For raw material we use Aristotle's table from the *Nicomachean Ethics*, where each virtue sits between two opposite vices (courage between cowardice and recklessness), plus virtues from broader traditions. His table is useful here not for its conclusions but for its format: virtue/vice pairs are exactly the data the method needs. He built the dataset 2,400 years early and never got to run it.
+People have argued about what virtue is for a long time without settling it. In the *Meno*, Socrates asks for a definition and Meno hands him a list of virtues, which gets him nowhere. We are not going to settle it either, but we can ask a smaller question that actually has an answer: take a model that has read most of the internet, subtract "she stayed silent because she was afraid" from "she spoke up despite her fear" a few dozen times, and check whether the leftovers point the same way. For raw material we use Aristotle's table from the *Nicomachean Ethics*, where each virtue sits between two opposite vices (courage between cowardice and recklessness), plus virtues from broader traditions. His table is useful here not for its conclusions but for its format: virtue/vice pairs are exactly the data the method needs. He built the dataset 2,400 years early and never got to run it, so this repository runs it for him.
 
 Our question is narrower than "what is virtue?" It is: when a language model compresses human text into geometry, does the virtue/vice contrast occupy one direction or many? Three findings:
 
@@ -61,7 +61,7 @@ $$v_1 = \underset{\lVert v \rVert = 1}{\arg\max} \; \sum_{i=1}^{n} (d_i \cdot v)
 
 the unit direction that captures the most energy of the contrasts. Equivalently, it is the leading eigenvector of the uncentered second-moment matrix $D^\top D$. We do not center $D$: the shared mean of the differences is the signal, and the singular spectrum $\sigma_1 \ge \sigma_2 \ge \dots$ then answers the unity question directly. We report the energy share $\eta_k = \sigma_k^2 / \sum_j \sigma_j^2$. If the virtue/vice contrast were $m$ unrelated directions, energy would spread over $m$ components. Pure noise would spread it near the uniform floor $1/n$.
 
-Differencing is what makes the method work. A virtue sentence and its matched vice sentence share topic, register, length, and syntax. Subtraction cancels all of that and leaves mostly the moral contrast. Section 4.6 shows what happens without the contrast: the "PC1 of a pile of concept words" recipe fails.
+Differencing is what makes the method work. A virtue sentence and its matched vice sentence share topic, register, length, and syntax, so subtraction cancels all of that and leaves mostly the moral contrast. Section 4.6 shows what happens without the contrast: the "PC1 of a pile of concept words" recipe fails.
 
 The sign of $v_1$ is arbitrary under SVD. We orient it so $v_1 \cdot \bar d > 0$, pointing toward virtue. A text $t$ is scored by projection: $\mathrm{score}(t) = \varphi(t) \cdot v_1$.
 
@@ -89,7 +89,7 @@ Three tests, in increasing order of difficulty:
 
 All data lives in [`data/`](data/) as human-readable JSON. It is small enough to read in one sitting, on purpose: the seed pairs are the operational definition of virtue being tested.
 
-- **[`virtue_pairs.json`](data/virtue_pairs.json)**: 61 sentence pairs across 26 virtue/vice contrasts. Fifteen contrasts come from Aristotle's table, with each virtue set against its vice of deficiency and/or excess: courage vs. cowardice and courage vs. recklessness, generosity vs. stinginess and vs. wastefulness, friendliness vs. quarrelsomeness and vs. obsequiousness, through righteous indignation vs. envy. Eleven more contrasts cover broader traditions: honesty, compassion, justice, humility, gratitude, loyalty, diligence, forgiveness, integrity, kindness, prudence. Each pair holds structure constant and flips only the moral content: "She spoke up in the meeting even though her hands were shaking" / "She stayed silent in the meeting because she was afraid to speak." The excess-side vices matter. Recklessness and flattery are pleasant-adjacent vices, and their pairs teach the axis that virtue is not enthusiasm.
+- **[`virtue_pairs.json`](data/virtue_pairs.json)**: 61 sentence pairs across 26 virtue/vice contrasts. Fifteen contrasts come from Aristotle's table, with each virtue set against its vice of deficiency and/or excess: courage vs. cowardice and courage vs. recklessness, generosity vs. stinginess and vs. wastefulness, friendliness vs. quarrelsomeness and vs. obsequiousness, through righteous indignation vs. envy. Eleven more contrasts cover broader traditions: honesty, compassion, justice, humility, gratitude, loyalty, diligence, forgiveness, integrity, kindness, prudence. Each pair holds structure constant and flips only the moral content: "She spoke up in the meeting even though her hands were shaking" / "She stayed silent in the meeting because she was afraid to speak." The excess-side vices matter because recklessness and flattery are pleasant-adjacent, and their pairs teach the axis that virtue is not the same thing as enthusiasm.
 - **[`sentiment_pairs.json`](data/sentiment_pairs.json)**: 14 pleasant/unpleasant pairs with no moral content, for the control axis.
 - **[`probe_actions.json`](data/probe_actions.json)**: 31 unseen everyday actions in seven cells: virtuous, vicious, neutral, pleasant-nonmoral, unpleasant-nonmoral, and the two dissociation cells (virtuous-but-unpleasant, vicious-but-pleasant).
 
@@ -146,19 +146,19 @@ This figure answers the obvious objection: that we found the niceness axis. The 
 
 *Figure 7. Good-vs-bad AUC on the unseen probes, per model.*
 
-The 22M-parameter model is at chance on unseen actions (0.53). It separates matched pairs perfectly but its single-sentence geometry is dominated by surface tone: it scores "took credit for a colleague's work" as fine because the words are workplace-pleasant, and it penalizes the whistleblower sentence because "violation" appears in it. Two 110M models do better (0.73 and 0.81). The frontier embedding model separates the categories perfectly. Rank agreement tells the same story: the small models correlate with the frontier model at Spearman 0.29 to 0.69, agreeing on easy cases and diverging on the dissociation probes. Moral structure in text is a capability-contingent signal. Small models see it as sentiment. Better models resolve it into something that behaves like virtue.
+The 22M-parameter model is at chance on unseen actions (0.53). It separates matched pairs perfectly but its single-sentence geometry is dominated by surface tone: it scores "took credit for a colleague's work" as fine because the words are workplace-pleasant, and it penalizes the whistleblower sentence because "violation" appears in it. Two 110M models do better (0.73 and 0.81). The frontier embedding model separates the categories perfectly. Rank agreement tells the same story: the small models correlate with the frontier model at Spearman 0.29 to 0.69, agreeing on easy cases and diverging on the dissociation probes. Moral structure in text appears to be a capability-contingent signal: small models see it as sentiment, while better models resolve it into something that behaves like virtue.
 
 ### 4.6 The naive recipe fails
 
-The construction the original meme implies (stack embeddings of virtue sentences alone, take PC1) classifies held-out pairs at 53 to 87% depending on the model, versus 93 to 100% for the contrast method on the same data. The first principal component of a pile of virtue-talk is not virtue. It is whatever dominates the variance of the pile: topic, register, sentence form. The eigenslur, computed as advertised, would mostly have been an axis of how slurs are phrased. Concepts live in contrasts, not in piles.
+The construction the original meme implies (stack embeddings of virtue sentences alone, take PC1) classifies held-out pairs at 53 to 87% depending on the model, versus 93 to 100% for the contrast method on the same data. The first principal component of a pile of virtue-talk is not virtue but whatever dominates the pile's variance: topic, register, sentence form. The eigenslur, computed as advertised, would mostly have been an axis of how slurs are phrased. Concepts live in contrasts, not in piles.
 
 ## 5. Discussion
 
-**What was actually found.** Not virtue itself. The axis is a regularity in how humans write about virtue, compressed into geometry by models trained on our text, and probed through seed pairs we chose. Its philosophical standing is roughly that of a careful survey of everything ever written, filtered through one ancient Greek's taxonomy.
+**What was actually found.** Not virtue itself, but a regularity in how humans write about virtue, compressed into geometry by models trained on our text and probed through seed pairs we chose. Its philosophical standing is roughly that of a careful survey of everything ever written, filtered through one ancient Greek's taxonomy.
 
 **Why it is still interesting.** The result did not have to come out this way. The contrasts could have been geometrically incoherent: 26 unrelated directions, LOGO at chance, a flat spectrum. Instead, the unity Socrates asked about shows up as a measurable, transferable, dominant direction, and it sharpens with model capability. At minimum, the concept of virtue is legible to language models. They represent it coherently enough that a 61-example probe recovers it, distinguishes it from pleasantness, and applies it to novel cases.
 
-**The speculative part, labeled as such.** Language-model systems, including humanoid robots, are about to exist in very large numbers, and their behavior will depend on what their underlying models represent. Nothing here shows that a direction in embedding space motivates anything. A representation is not a value. But alignment has a precondition: the target has to be expressible in the system's internal language. This study suggests "the direction of human flourishing" is not just a phrase. It is an estimable vector. It transfers to unseen cases. And the better the model, the more sharply it resolves. Whether machines can be pointed toward the good is open. That they can represent which way it lies is now a checkable claim, and the check passes.
+**The speculative part, labeled as such.** Language-model systems, including humanoid robots, are about to exist in very large numbers, and their behavior will depend on what their underlying models represent. Nothing here shows that a direction in embedding space motivates anything, since a representation is not a value. But alignment has a precondition: the target has to be expressible in the system's internal language. This study suggests that "the direction of human flourishing" is not just a phrase but an estimable vector, one that transfers to unseen cases and resolves more sharply as models improve. Whether machines can be pointed toward the good remains an open question, but whether they can represent which way it lies is a checkable claim, and the check passes.
 
 ## 6. Limitations
 
