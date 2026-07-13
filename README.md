@@ -1,6 +1,6 @@
 # eigenvirtue
 
-**The dominant direction of virtue in a language model's embedding space, computed from Aristotle's table of virtues and vices.**
+**Beneath courage, honesty, and compassion, is there one thing humans mean by virtue? This repository asks a language model's embedding space, and gets an answer.**
 
 <table>
 <tr>
@@ -17,13 +17,13 @@
 </tr>
 </table>
 
-*A small, reproducible study: part linear algebra, part computer science, part philosophy. The code also works as a general tool for extracting the axis of any abstract concept.*
+*A small, reproducible study: part linear algebra, part computer science, part philosophy. The question came from [this video](https://www.tiktok.com/@zach.zeta.s/video/7640238795803151646), which asked whether the direction of human flourishing could be computed. The code also works as a general tool for extracting the axis of any abstract concept.*
 
 ---
 
 ## Abstract
 
-In Plato's *Meno*, Socrates asks what virtue is. Meno answers with a list of virtues, and Socrates points out that a list is not a definition. Whether anything unifies the list has stayed an open question for twenty-four centuries. Embedding models give a concrete way to test a narrow version of it: write matched virtue/vice sentence pairs, embed both sides, subtract, and check whether the difference vectors share one direction. We build 61 pairs across 26 contrasts, most taken directly from Aristotle's table of virtues and vices in the *Nicomachean Ethics*, and compute the top singular vector of the stacked differences. We call it the eigenvirtue. Across four embedding models, this direction carries 8 to 14 times more contrast energy than the noise floor, classifies held-out pairs at 93 to 100% accuracy, and transfers to virtues excluded from fitting entirely. For the strongest model, an axis fit on 25 contrasts correctly orders every pair of the held-out 26th, and this holds for all 26 contrasts. After projecting out a separately fit sentiment axis, the eigenvirtue separates unseen virtuous actions from vicious ones with AUC 1.00 on the strongest model, ranking unpleasant virtue (comforting the dying, accepting public embarrassment) above pleasant vice (flattery, cheating, embezzled luxury). Separation scales with model capability, from AUC 0.53 to 1.00. The method is general: it finds the dominant direction of any concept you can write contrast pairs for.
+In Plato's *Meno*, Socrates asks what virtue is. Meno answers with a list of virtues, and Socrates points out that a list is not a definition. Whether anything unifies the list has stayed an open question for twenty-four centuries. Embedding models give a concrete way to test a narrow version of it: write matched virtue/vice sentence pairs, embed both sides, subtract, and check whether the difference vectors share one direction. We build 61 pairs across 26 contrasts, drawing on Aristotle's table of virtues and vices and on broader moral traditions, and compute the top singular vector of the stacked differences. We call it the eigenvirtue. Across four embedding models, this direction carries 8 to 14 times more contrast energy than the noise floor, classifies held-out pairs at 93 to 100% accuracy, and transfers to virtues excluded from fitting entirely. For the strongest model, an axis fit on 25 contrasts correctly orders every pair of the held-out 26th, and this holds for all 26 contrasts. After projecting out a separately fit sentiment axis, the eigenvirtue separates unseen virtuous actions from vicious ones with AUC 1.00 on the strongest model, ranking unpleasant virtue (comforting the dying, accepting public embarrassment) above pleasant vice (flattery, cheating, embezzled luxury). Separation scales with model capability, from AUC 0.53 to 1.00. The method is general: it finds the dominant direction of any concept you can write contrast pairs for.
 
 ---
 
@@ -31,7 +31,7 @@ In Plato's *Meno*, Socrates asks what virtue is. Meno answers with a list of vir
 
 This project started as the inversion of a joke. The [eigenslur](https://eigenslur.org/) thought experiment claimed that since offensiveness is a direction in embedding space, some token must project furthest along it. The site never ran the computation. A [follow-up video](https://www.tiktok.com/@zach.zeta.s/video/7640238795803151646) by @zach.zeta.s asked the mirror-image question: could the same construction capture the direction of actions that aim at human flourishing, an eigenvalue of virtue? The video ended with an open invitation to attempt the idea rigorously. This repository is that attempt.
 
-The philosophical question is older than the math. In the *Meno*, Socrates rejects every definition of virtue offered by example. Aristotle's answer in the *Nicomachean Ethics* is structural: every virtue is a mean between a vice of deficiency and a vice of excess. Courage sits between cowardice and recklessness. Generosity sits between stinginess and wastefulness. That table of oppositions, written around 350 BC, is exactly the shape of data that modern concept-extraction methods need: matched contrast pairs. Aristotle wrote the training data without knowing it.
+The question is old, and it is not only Greek. Every moral tradition keeps a list of virtues: courage, honesty, compassion, patience, justice. The lists differ at the edges and overlap at the core, and the hard question sits underneath all of them: what do humans mean by virtue, apart from the individual virtues on the list? In the *Meno*, Socrates rejects every answer given by example. A list is not a definition. This study tests whether the examples secretly contain the definition, as a direction in vector space. For raw material we use Aristotle's table from the *Nicomachean Ethics*, where each virtue sits between a vice of deficiency and a vice of excess (courage between cowardice and recklessness), extended with virtues from broader traditions. We use the table for what it is: a convenient, well-structured source of matched opposites. Aristotle wrote good training data. The question belongs to everyone.
 
 Our question is narrower than "what is virtue?" It is: when a language model compresses human text into geometry, does the virtue/vice contrast occupy one direction or many? Three findings:
 
@@ -122,7 +122,7 @@ The leave-one-group-out result is the headline. For `text-embedding-3-large`, an
 
 *Figure 4. Share of contrast energy by principal component, per model. Dashed line: the uniform-noise floor (1/61, about 1.6%).*
 
-The first component carries 11 to 20% of total contrast energy, which is 8 to 14 times the noise floor and 2.3 to 2.6 times the second component. The top singular vector nearly coincides with the plain mean of the differences (cosine 0.93 to 0.99), so the eigen construction and simple averaging find the same object. The spectrum's shape: one dominant direction, a few meaningful minor components (plausibly families of virtue, such as self-regarding vs. other-regarding), then a noise tail. This is close to Aristotle's own position: the virtues are unified by a common form while remaining genuinely plural.
+The first component carries 11 to 20% of total contrast energy, which is 8 to 14 times the noise floor and 2.3 to 2.6 times the second component. The top singular vector nearly coincides with the plain mean of the differences (cosine 0.93 to 0.99), so the eigen construction and simple averaging find the same object. The spectrum's shape: one dominant direction, a few meaningful minor components (plausibly families of virtue, such as self-regarding vs. other-regarding), then a noise tail. This matches an intuition that appears across traditions: the virtues are one thing and also many.
 
 ### 4.3 Unseen actions rank correctly
 
