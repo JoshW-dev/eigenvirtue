@@ -77,7 +77,7 @@ def fig1_arrows():
     e2 = vt[1]
 
     # Two panels: pairs scattered in space (left), then every difference
-    # arrow translated to a common origin (right) — direction agreement
+    # arrow translated to a common origin (right); direction agreement
     # becomes visible as a rightward fan around v1.
     fig, (axl, axr) = plt.subplots(1, 2, figsize=(11.5, 5.4))
 
@@ -129,7 +129,7 @@ def fig1_arrows():
     axr.set_title("the same pairs as difference arrows, moved to one origin:\nvice $\\rightarrow$ virtue points one way", fontsize=10.5, color=INK)
     axr.set_aspect("equal")
 
-    fig.suptitle("Each virtue/vice sentence pair is an arrow — and the arrows agree", fontsize=12.5, color=INK)
+    fig.suptitle("Each virtue/vice sentence pair is an arrow, and the arrows agree", fontsize=12.5, color=INK)
     fig.tight_layout(rect=(0, 0, 1, 0.95))
     fig.savefig(FIGS / "fig1_arrows.png", dpi=200)
     plt.close(fig)
@@ -153,7 +153,7 @@ def fig2_spectrum(summary):
         ax.set_xlabel("principal component of the contrast", fontsize=9)
     for ax in axes[:, 0]:
         ax.set_ylabel("share of energy (%)", fontsize=9)
-    fig.suptitle("One component dominates: virtue behaves like a single direction, plus echoes",
+    fig.suptitle("One component dominates the spectrum of the virtue contrast",
                  fontsize=11.5, color=INK)
     fig.tight_layout(rect=(0, 0, 1, 0.96))
     fig.savefig(FIGS / "fig2_spectrum.png", dpi=200)
@@ -184,7 +184,7 @@ def fig3_ranking(summary):
     ax.set_xlim(-0.33, 0.33)
     ax.set_yticks([])
     ax.set_xlabel("projection onto the eigenvirtue, sentiment removed (cosine)")
-    ax.set_title("31 unseen actions on the virtue axis — openai/text-embedding-3-large",
+    ax.set_title("31 unseen actions on the virtue axis (openai/text-embedding-3-large)",
                  fontsize=12, color=INK)
     handles = [Rectangle((0, 0), 1, 1, color=GOOD), Rectangle((0, 0), 1, 1, color=NEUT),
                Rectangle((0, 0), 1, 1, color=BAD)]
@@ -252,7 +252,7 @@ def fig4_scatter(summary):
     ax.text(x1 - pad, y0 + pad, "pleasant but vicious", ha="right", va="bottom", **corner)
     ax.set_xlabel("sentiment axis (pleasant →)")
     ax.set_ylabel("virtue axis, sentiment removed (virtuous →)")
-    ax.set_title("Virtue is not pleasantness — openai/text-embedding-3-large", fontsize=12, color=INK)
+    ax.set_title("Virtue is not pleasantness (openai/text-embedding-3-large)", fontsize=12, color=INK)
     handles = [
         Line2D([], [], color=GOOD, marker="s", linestyle="", markersize=7, label="virtuous"),
         Line2D([], [], color=NEUT, marker="s", linestyle="", markersize=7, label="nonmoral"),
@@ -337,7 +337,7 @@ def fig6_pipeline():
     for i, h in enumerate([0.26, 0.10, 0.07, 0.05, 0.04]):
         ax.add_patch(Rectangle((0.16 + i * 0.14, 0.06), 0.09, h, color=GOOD))
     ax.text(0.5, 0.0, "singular-value spectrum", ha="center", fontsize=7.5, color=MUTED)
-    ax.set_title("4 · SVD finds the shared\ndirection — and its spectrum", fontsize=9.5, color=INK)
+    ax.set_title("4 · SVD finds the shared\ndirection and its spectrum", fontsize=9.5, color=INK)
 
     fig.tight_layout()
     fig.savefig(FIGS / "fig6_pipeline.png", dpi=200)
